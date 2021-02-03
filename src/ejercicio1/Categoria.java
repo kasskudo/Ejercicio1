@@ -13,8 +13,8 @@ public class Categoria {
     
     //Parametros de la clase.
     
-    protected int idcategoria; 
-    public String categoria;
+    private int idcategoria; 
+    private String categoria;
     
     //Constructor por defecto
     

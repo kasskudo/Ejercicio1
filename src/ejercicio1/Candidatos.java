@@ -18,10 +18,10 @@ import java.util.Date;
 public class Candidatos {
     
     protected int idcandidato;
-    public String nombre; 
-    public String ciudad; 
-    public Date fechainscripcion;
-    public boolean finalista;
+    protected String nombre; 
+    protected String ciudad; 
+    protected Date fechainscripcion;
+    protected boolean finalista;
     
     //Constructor por defecto
     

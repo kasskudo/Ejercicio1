@@ -5,6 +5,8 @@
  */
 package ejercicio1;
 
+import java.util.ArrayList;
+
 /**
  *
  * @author david
@@ -14,10 +16,11 @@ public class Tribunal {
     //Metodos de la clase
     
         protected int idtribunal; 
-        public String nombre; 
-        public String email;
-        public String dni; 
-        public String telefono;
+        private String nombre; 
+        private String email;
+        private String dni; 
+        private String telefono;
+        private ArrayList<Audicion> audiciones;
 
     //Constructores de clase
 
@@ -25,13 +28,15 @@ public class Tribunal {
         
         }
 
-    public Tribunal(int idtribunal, String nombre, String email, String dni, String telefono) {
+        public Tribunal(int idtribunal, String nombre, String email, String dni, String telefono) {
         this.idtribunal = idtribunal;
         this.nombre = nombre;
         this.email = email;
         this.dni = dni;
         this.telefono = telefono;
     }
+    
+    
     
    //Getters y Setters
 
@@ -74,9 +79,13 @@ public class Tribunal {
     public void setTelefono(String telefono) {
         this.telefono = telefono;
     }
-    
-    
-        
-    
-    
+
+    public ArrayList<Audicion> getAudiciones() {
+        return audiciones;
+    }
+
+    public void setAudiciones(ArrayList<Audicion> audiciones) {
+        this.audiciones = audiciones;
+    }
+       
 }

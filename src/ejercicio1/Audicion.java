@@ -14,10 +14,14 @@ import java.util.Calendar;
 public class Audicion {
    
     //parametros de la clase
-    protected int idaudicion;
-    public float puntuacionmedia;
-    public String lugar;
-    public Calendar fechahora;
+    private int idaudicion;
+    private float puntuacionmedia;
+    private String lugar;
+    private Calendar fechahora;
+    private Categoria categoria;
+    private Tribunal tribunal1;
+    private Tribunal tribunal2;
+    private Tribunal tribunal3;
     
     //Constructor por defecto
      public Audicion(){
@@ -26,12 +30,17 @@ public class Audicion {
      
      //Constructor por parámetros
 
-    public Audicion(int idaudicion, float puntuacionmedia, String lugar, Calendar fechahora) {
+    public Audicion(int idaudicion, float puntuacionmedia, String lugar, Calendar fechahora, Categoria categoria, Tribunal tribunal1, Tribunal tribunal2, Tribunal tribunal3) {
         this.idaudicion = idaudicion;
         this.puntuacionmedia = puntuacionmedia;
         this.lugar = lugar;
         this.fechahora = fechahora;
+        this.categoria = categoria;
+        this.tribunal1 = tribunal1;
+        this.tribunal2 = tribunal2;
+        this.tribunal3 = tribunal3;
     }
+
     
     //Getters y setters
 
@@ -66,6 +75,39 @@ public class Audicion {
     public void setFechahora(Calendar fechahora) {
         this.fechahora = fechahora;
     }
+
+    public Categoria getCategoria() {
+        return categoria;
+    }
+
+    public void setCategoria(Categoria categoria) {
+        this.categoria = categoria;
+    }
+
+    public Tribunal getTribunal1() {
+        return tribunal1;
+    }
+
+    public void setTribunal1(Tribunal tribunal1) {
+        this.tribunal1 = tribunal1;
+    }
+
+    public Tribunal getTribunal2() {
+        return tribunal2;
+    }
+
+    public void setTribunal2(Tribunal tribunal2) {
+        this.tribunal2 = tribunal2;
+    }
+
+    public Tribunal getTribunal3() {
+        return tribunal3;
+    }
+
+    public void setTribunal3(Tribunal tribunal3) {
+        this.tribunal3 = tribunal3;
+    }
+    
     
     
         

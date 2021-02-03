@@ -13,12 +13,11 @@ public class Persona {
     
     //parametros de la clase
     
-    protected int idpersona; 
-    public String nombre; 
-    public String email;
-    public String dni;
-    public String telefono;
-    protected Individual idcandidato;
+    private int idpersona; 
+    private String nombre; 
+    private String email;
+    private String dni;
+    private String telefono;
     
     
     //Constructores 
@@ -27,13 +26,12 @@ public class Persona {
     
     }
 
-    public Persona(int idpersona, String nombre, String email, String dni, String telefono, Individual idcandidato) {
+    public Persona(int idpersona, String nombre, String email, String dni, String telefono) {
         this.idpersona = idpersona;
         this.nombre = nombre;
         this.email = email;
         this.dni = dni;
         this.telefono = telefono;
-        this.idcandidato = idcandidato;
     }
     
     //Getters y Setters 
@@ -77,14 +75,5 @@ public class Persona {
     public void setTelefono(String telefono) {
         this.telefono = telefono;
     }
-
-    public Individual getIdcandidato() {
-        return idcandidato;
-    }
-
-    public void setIdcandidato(Individual idcandidato) {
-        this.idcandidato = idcandidato;
-    }
-    
 
 }

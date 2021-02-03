@@ -6,8 +6,7 @@
 package ejercicio1;
 
 import java.util.Date;
-import java.util.Hashtable;
-import java.util.Map.Entry;
+import java.util.HashMap;
 
 /**
  *
@@ -17,11 +16,12 @@ public class Convocatoria implements Comparable<Convocatoria>{
 
     //Parámetros de la clase
 
-    protected int id;
-    public Date fechaCelebracion;
-    public String lugarCelebracion;
-    public String categoria;
-    public Tribunal tribunal;
+    private int id;
+    private Date fechaCelebracion;
+    private String lugarCelebracion;
+    private Categoria categoria;
+    private Tribunal[] tribunal = new Tribunal[3];
+    private HashMap<Integer, String> convocados;
 
 
     //Constructor por defecto
@@ -32,15 +32,7 @@ public class Convocatoria implements Comparable<Convocatoria>{
     
     
     //Getters y Setters
-    public String getCategoria() {
-        return categoria;
-    }
-
-    public void setCategoria(String categoria) {
-        this.categoria = categoria;
-    }
-
-
+   
     public int getId() {
         return id;
     }
@@ -65,52 +57,33 @@ public class Convocatoria implements Comparable<Convocatoria>{
         this.lugarCelebracion = lugarCelebracion;
     }
 
-    public Tribunal getTribunal() {
+    public Categoria getCategoria() {
+        return categoria;
+    }
+
+    public void setCategoria(Categoria categoria) {
+        this.categoria = categoria;
+    }
+
+    public Tribunal[] getTribunal() {
         return tribunal;
     }
 
-    public void setTribunal(Tribunal tribunal) {
+    public void setTribunal(Tribunal[] tribunal) {
         this.tribunal = tribunal;
     }
-    
+
+    public HashMap<Integer, String> getConvocados() {
+        return convocados;
+    }
+
+    public void setConvocados(HashMap<Integer, String> convocados) {
+        this.convocados = convocados;
+    }
+
+
     
  
-    
-    //Diccionario para el conjunto de candidatos
-
-    public static void main(String[] args){
-
-        Hashtable<Integer, String> conjuntoCandidatos = new Hashtable<Integer, String>();
-        
-        conjuntoCandidatos.put(1, "Loli");
-        conjuntoCandidatos.put(2, "Los valientes");
-        conjuntoCandidatos.put(3, "Magic Andrew");
-        conjuntoCandidatos.put(4, "Danza Extrema Team");
-        conjuntoCandidatos.put(5, "Star Acrobatics");
-        conjuntoCandidatos.put(6, "Sergio Garcia");
-        
-        //Sacar los nombres de los candidatos
-        for (Entry<Integer, String> entry : conjuntoCandidatos.entrySet()) {
-            System.out.println(entry.getValue());
-             
-        }
-        
-        //Array estatico para las 3 personas del tribunal siguiendo el constructor de tribunal. 
-        //(int idtribunal, String nombre, String email, String dni, String telefono)
-        
-    Tribunal[] personasTribunal = new Tribunal [3];
-    
-        Tribunal p1 = new Tribunal(1,"Luis Gutierrez", "luisguti@gmail.com", "61849405K", "923723221");
-        Tribunal p2 = new Tribunal(2, "Paco Flores", "pacofloresr@gmail.com", "53900155L", "688320977");
-        Tribunal p3 = new Tribunal(3, "Laura Pi", "laurapi@gmail.com", "12345687O", "987654321");
-        personasTribunal[0] = p1;
-        personasTribunal[1] = p2;
-        personasTribunal[1] = p3;
-        
-    }
-    
-     
-    
     
    //Interfaz Comparable para ordenar los objetos de la clase. 
 
@@ -126,7 +99,7 @@ public class Convocatoria implements Comparable<Convocatoria>{
     public String toString (){
        
    return "Convocatoria{" + "identificador=" + id + ", lugarCelebracion=" + lugarCelebracion + ", fechaCelebracion=" + fechaCelebracion + ", categoria=" + categoria + 
-          ", p1.nombre=" + "Luis Gutierrez" + "61849405K" + "Paco Flores" + "53900155L" + "Laura Pi" + "12345687O" + '}'; 
+          ", Tribunal=" + tribunal + "convocados=" + convocados + "}"; 
     }  
    
 
