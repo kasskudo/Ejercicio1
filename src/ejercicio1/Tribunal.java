@@ -28,14 +28,23 @@ public class Tribunal {
         
         }
 
+        public Tribunal(int idtribunal, String nombre, String email, String dni, String telefono, ArrayList<Audicion> audiciones) {
+        this.idtribunal = idtribunal;
+        this.nombre = nombre;
+        this.email = email;
+        this.dni = dni;
+        this.telefono = telefono;
+        this.audiciones = audiciones;
+    }
+    
         public Tribunal(int idtribunal, String nombre, String email, String dni, String telefono) {
         this.idtribunal = idtribunal;
         this.nombre = nombre;
         this.email = email;
         this.dni = dni;
         this.telefono = telefono;
+      
     }
-    
     
     
    //Getters y Setters
