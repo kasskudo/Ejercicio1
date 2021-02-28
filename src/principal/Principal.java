@@ -6,8 +6,12 @@
 package principal;
 
 import ejercicio1.*;
+import java.io.BufferedWriter;
+import java.io.File;
+import java.io.FileWriter;
 import java.util.Hashtable;
 import java.util.Map;
+
 
 /**
  *
@@ -44,6 +48,17 @@ public class Principal {
         personasTribunal[1] = p2;
         personasTribunal[1] = p3;
         
+           
+
     }
+     
+     public void escribirTribunal(){
+     
+         Tribunal tribunal = new Tribunal(); 
+         tribunal.exportarTribunal(tribunal);
+     }
+
     
-}
+        
+    }
+

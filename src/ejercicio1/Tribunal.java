@@ -5,6 +5,9 @@
  */
 package ejercicio1;
 
+import java.io.BufferedWriter;
+import java.io.File;
+import java.io.FileWriter;
 import java.util.ArrayList;
 
 /**
@@ -96,5 +99,30 @@ public class Tribunal {
     public void setAudiciones(ArrayList<Audicion> audiciones) {
         this.audiciones = audiciones;
     }
+    
+     public void exportarTribunal(Tribunal nuevo){
+     
+         try{
+         File f = new File("Tribunal.txt");
+         FileWriter fw;
+         BufferedWriter bw;
+         if(f.exists()){
+         fw = new FileWriter(f);
+         bw = new BufferedWriter(fw);
+         bw.newLine();
+         bw.write(nuevo.idtribunal + "|" + nuevo.nombre + "|" + nuevo.email + "|" + nuevo.dni + "|" + nuevo.telefono);
+         } else {
+             fw = new FileWriter(f);
+         bw = new BufferedWriter(fw);
+         bw.newLine();
+         bw.write(nuevo.idtribunal + "|" + nuevo.nombre + "|" + nuevo.email + "|" + nuevo.dni + "|" + nuevo.telefono);    
+         }
+         bw.close();
+         fw.close();
+         } 
+         catch (Exception e) {
+         System.out.println(e);
+         }
+     }
        
 }
